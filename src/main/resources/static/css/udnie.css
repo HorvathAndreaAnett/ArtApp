@@ -1,0 +1,92 @@
+
+/*#wrapper {*/
+/*    width:500px;*/
+/*    margin:0 auto;*/
+/*    margin-top:40px;*/
+/*}*/
+/*#fileDropBox {*/
+/*    margin-left:100px;*/
+/*    width: 20em;*/
+/*    line-height: 10em;*/
+/*    border: 1px dashed gray;*/
+/*    text-align: center;*/
+/*    color: gray;*/
+/*    border-radius: 7px;*/
+/*}*/
+
+.body {
+    background-image: url("/images/bgALB.png");
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+.title {
+    alignment: center;
+    padding-top: 40px;
+    padding-left: 100px;
+    font-family:Segoe UI Semibold, Tahoma, Geneva, sans-serif;
+    color: #2d3561;
+    font-size: 300%;
+}
+
+.logo {
+    padding-top: 25px;
+    padding-left: 90px;
+}
+
+.painting {
+    padding-top: 40px;
+}
+
+.info {
+    padding-top: 125px;
+    padding-left: 180px;
+    padding-right: 20px;
+    font-size: medium;
+    font-family: "Segoe UI Semibold", Tahoma, Geneva, sans-serif;
+    color: #2d3561;
+}
+
+.drag {
+    padding-top: 110px;
+    padding-left: 180px;
+    font-size: medium;
+    font-family: "Segoe UI Semibold", Tahoma, Geneva, sans-serif;
+    color: #2d3561;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+.custom-file-input::before {
+    content: 'Choose an image';
+    display: block;
+    border: 1px solid #2d3561;
+    border-radius: 4px;
+    padding: 6px 10px;
+    outline: #2d3561;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 12pt;
+    text-align: center;
+    width: 260px;
+    background-color: #ffb961;
+    color: #2d3561;
+    font-family: Segoe UI Semibold, Tahoma, Geneva, sans-serif;
+}
+.custom-file-input:hover::before {
+    border-color: black;
+}
+.custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+

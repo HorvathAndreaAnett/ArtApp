@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>ART APP - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}"/>
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+</head>
+<style>
+    .jumbotron {
+        background-image: url("/images/bgWhite.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 400px;
+    }
+
+    .container-fluid {
+        background-color: white;
+        padding: 20px;
+    }
+
+    .thumbnail {
+        padding: 0 0 15px 0;
+        border: none;
+        border-radius: 0;
+    }
+
+    .thumbnail img {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 10px;
+    }
+
+    .navbar {
+        margin-bottom: 0;
+        background-color: transparent;
+        z-index: 9999;
+        border: 0;
+        font-size: 12px !important;
+        line-height: 1.42857143 !important;
+        letter-spacing: 4px;
+        border-radius: 0;
+    }
+
+    .navbar li a, .navbar .navbar-brand {
+        color: #fff !important;
+    }
+
+    .navbar-nav li a:hover, .navbar-nav li.active a {
+        color: white !important;
+        background-color: transparent !important;
+    }
+
+    .navbar-default .navbar-toggle {
+        border-color: transparent;
+        color: #fff !important;
+    }
+
+    .button {
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+
+    .button1 {
+        background-color: #ffffff;
+        color: #2d3561;
+    }
+
+    .slideanim {visibility:hidden;}
+    .slide {
+        /* The name of the animation */
+        animation-name: slide;
+        -webkit-animation-name: slide;
+        /* The duration of the animation */
+        animation-duration: 1s;
+        -webkit-animation-duration: 1s;
+        /* Make the element visible */
+        visibility: visible;
+    }
+
+    /* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+    @keyframes slide {
+        0% {
+            opacity: 0;
+            transform: translateY(70%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    }
+    @-webkit-keyframes slide {
+        0% {
+            opacity: 0;
+            -webkit-transform: translateY(70%);
+        }
+        100% {
+            opacity: 1;
+            -webkit-transform: translateY(0%);
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .col-sm-4 {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .btn-lg {
+            width: 100%;
+            margin-bottom: 35px;
+        }
+    }
+    @media screen and (max-width: 480px) {
+        .logo {
+            font-size: 150px;
+        }
+    }
+</style>
+
+<body style="background-color: white">
+
+<div class="jumbotron">
+
+</div>
+
+<div class="container-fluid text-center">
+    <div class="row text-center">
+        <div class="col-sm-6">
+            <div class="thumbnail" style="height: 600px; width: 700px" >
+                <a th:href="@{/paintings/thegreatwave}">
+                    <img th:src="@{/images/the_wave.jpg}" class="img-responsive center-block" width="400" height="400"
+                         alt="The Great Wave by Hokusai"/>
+                    </a>
+                <p><strong>The Great Wave</strong></p>
+                <p>Hokusai</p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="thumbnail" style="height: 600px; width: 700px">
+                <a th:href="@{/paintings/composition}">
+                    <img th:src="@{/images/composition_vii.jpg}" class="img-responsive center-block" width="400" height="400"
+                         alt="Composition VII by Kandinsky"/>
+                </a>
+                <p><strong>Composition VII</strong></p>
+                <p>Kandinsky</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <div class="col-sm-6">
+            <div class="thumbnail" style="height: 650px; width: 700px">
+                <a th:href="@{/paintings/lamuse}">
+                    <img th:src="@{/images/la_muse.jpg}" class="img-responsive center-block" width="400" height="400"
+                         alt="La Muse by Pablo Picasso"/>
+                </a>
+                <p><strong>La Muse</strong></p>
+                <p>Pablo Picasso</p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="thumbnail" style="height: 650px; width: 700px">
+                <a th:href="@{/paintings/starrynight}">
+                    <img th:src="@{/images/starry_night.jpg}" class="img-responsive center-block" width="400" height="400"
+                         alt="The Starry Night by Vincent van Gogh"/>
+                </a>
+                <p><strong>The Starry Night</strong></p>
+                <p>Vincent van Gogh</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <div class="col-sm-4" style="padding-top: 15px">
+            <div class="thumbnail" style="height: 650px; width: 450px">
+                <a th:href="@{/paintings/thescream}">
+                    <img th:src="@{/images/the_scream.jpg}" class="img-responsive center-block" width="400" height="400"
+                         alt="The Scream by Edvard Munch"/>
+                    </a>
+                <p><strong>The Scream</strong></p>
+                <p>Edvard Munch</p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="thumbnail" style="height: 710px; width: 450px">
+                <a th:href="@{/paintings/junetree}">
+                    <img th:src="@{/images/candy.jpg}" class="img-responsive center-block" width="400" height="200"
+                         alt="June Tree by Natasha Wescoa"/>
+                    </a>
+                <p><strong>June Tree</strong></p>
+                <p>Natasha Wescoa</p>
+            </div>
+        </div>
+        <div class="col-sm-4"style="padding-top: 70px">
+            <div class="thumbnail" style="height: 540px; width: 450px">
+                <a th:href="@{/paintings/udnie}">
+                    <img th:src="@{/images/udnie.jpg}" class="img-responsive center-block" width="400" height="400"
+                         alt="Udnie by 	Francis Picabia"/>
+                    </a>
+                <p><strong>Udnie</strong></p>
+                <p>Francis Picabia</p>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">
+                        <form th:action="@{/logout}" method="get">
+                            <button class="btn btn-lg btn-primary btn-block" style="background-color: #ffffff; color: #2d3561;
+                        font-family: Segoe UI Semibold, Tahoma, Geneva, sans-serif" name="registration" type="Submit">LOG OUT
+                            </button>
+                        </form></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!--<div class="container">-->
+
+
+<!--</div>-->
+</body>
+</html>
+
+<!--<!DOCTYPE html>-->
+
+<!--<html xmlns="http://www.w3.org/1999/xhtml"-->
+<!--      xmlns:th="http://www.thymeleaf.org">-->
+
+<!--<head>-->
+<!--    <title>Admin Page</title>-->
+<!--    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}"/>-->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+
+<!--    <style>-->
+<!--        .button {-->
+<!--            border: none;-->
+<!--            color: white;-->
+<!--            padding: 15px 32px;-->
+<!--            text-align: center;-->
+<!--            text-decoration: none;-->
+<!--            display: inline-block;-->
+<!--            font-size: 16px;-->
+<!--            margin: 4px 2px;-->
+<!--            cursor: pointer;-->
+<!--            position: absolute;-->
+<!--            top: 15px;-->
+<!--            right: 15px;-->
+<!--        }-->
+
+<!--        .button1 {background-color: #2d3561;}-->
+
+
+<!--        /*panel*/-->
+<!--        * {-->
+<!--            box-sizing: border-box;-->
+<!--        }-->
+
+<!--        body {-->
+<!--            margin: 0;-->
+<!--            font-family: Arial;-->
+<!--        }-->
+
+<!--        .header {-->
+<!--            text-align: center;-->
+<!--            padding: 32px;-->
+<!--        }-->
+
+<!--        .row {-->
+<!--            display: -ms-flexbox; /* IE10 */-->
+<!--            display: flex;-->
+<!--            -ms-flex-wrap: wrap; /* IE10 */-->
+<!--            flex-wrap: wrap;-->
+<!--            padding: 0 4px;-->
+<!--        }-->
+
+<!--        /* Create four equal columns that sits next to each other */-->
+<!--        .column {-->
+<!--            -ms-flex: 50%; /* IE10 */-->
+<!--            flex: 50%;-->
+<!--            max-width: 50%;-->
+<!--            padding: 0 4px;-->
+<!--        }-->
+
+<!--        .column img {-->
+<!--            margin-top: 8px;-->
+<!--            vertical-align: middle;-->
+<!--            width: 100%;-->
+<!--        }-->
+
+<!--        /* Responsive layout - makes a two column-layout instead of four columns */-->
+<!--        @media screen and (max-width: 800px) {-->
+<!--            .column {-->
+<!--                -ms-flex: 50%;-->
+<!--                flex: 50%;-->
+<!--                max-width: 50%;-->
+<!--            }-->
+<!--        }-->
+
+<!--        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */-->
+<!--        @media screen and (max-width: 600px) {-->
+<!--            .column {-->
+<!--                -ms-flex: 100%;-->
+<!--                flex: 100%;-->
+<!--                max-width: 100%;-->
+<!--            }-->
+<!--        }-->
+
+<!--    </style>-->
+<!--</head>-->
+
+<!--<body>-->
+<!--<div class="container">-->
+
+<!--    <form th:action="@{/logout}" method="get">-->
+<!--        <button class="button button1" name="registration"-->
+<!--                type="Submit">Logout-->
+<!--        </button>-->
+<!--    </form>-->
+
+<!--    <div class="panel-group" style="margin-top:40px">-->
+<!--        <div class="panel panel-primary"-->
+<!--            style="border: 2px;-->
+<!--                    padding-top: 50px;-->
+<!--                    ">-->
+<!--            <div class="panel-heading"-->
+<!--                 style="-->
+<!--                    padding-top: 50px;-->
+<!--                    background-color: #f3826f;-->
+<!--                    ">-->
+<!--                <span th:utext="${userName}"></span>-->
+<!--            </div>-->
+<!--            <div class="panel-body">-->
+<!--                <div class="row">-->
+<!--                    <div class="column">-->
+<!--                        <a th:href="@{/paintings/thegreatwave}">-->
+<!--                            <img th:src="@{/images/wave.jpg}" class="img-responsive center-block" width="400" height="400"-->
+<!--                                 alt="The Great Wave"/>-->
+<!--                        </a>-->
+<!--                        <img th:src="@{/images/mona.jpg}" class="img-responsive center-block" width="400" height="400"-->
+<!--                             alt="Mona"/>-->
+<!--                        <img th:src="@{/images/tipatul.jpg}" class="img-responsive center-block" width="400" height="400"-->
+<!--                             alt="Mona"/>-->
+<!--                    </div>-->
+<!--                    <div class="column">-->
+<!--                        <img th:src="@{/images/night.jpg}" class="img-responsive center-block" width="400" height="400"-->
+<!--                             alt="Mona"/>-->
+<!--                        <img th:src="@{/images/man.jpg}" class="img-responsive center-block" width="400" height="400"-->
+<!--                             alt="Mona"/>-->
+<!--                        <img th:src="@{/images/park.jpg}" class="img-responsive center-block" width="400" height="400"-->
+<!--                             alt="Mona"/>-->
+<!--                    </div>-->
+
+<!--                </div>-->
+<!--&lt;!&ndash;                <img th:src="@{/images/mona.jpg}" class="img-responsive center-block" width="400" height="400"&ndash;&gt;-->
+<!--&lt;!&ndash;                     alt="Mona"/>&ndash;&gt;-->
+<!--            </div>-->
+<!--            &lt;!&ndash; <p class="admin-message-text text-center" th:utext="${adminMessage}"></p> &ndash;&gt;-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->

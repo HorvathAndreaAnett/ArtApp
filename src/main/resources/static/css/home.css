@@ -1,0 +1,22 @@
+.admin-message-text {
+    font-style: normal;
+    font-size: 22px;
+    color: #f3826f;
+}
+
+.panel-heading {
+    color: #f3826f;
+    width: auto;
+    height: auto;
+}
+
+.jumbotron {
+    background-image: url("/images/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body, html {
+    height: 100%;
+}

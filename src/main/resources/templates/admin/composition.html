@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>ART APP - Composition VII</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/composition.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+
+<body class="body">
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-sm-6">
+            <!---------------------pictura--------------------->
+            <div class="painting">
+                <img th:src="@{/images/composition_vii.jpg}" class="img-responsive center-block" width="600" height="600"
+                     alt="Composition VII"/>
+            </div>
+
+        </div>
+
+        <div class="col-sm-6">
+            <div class="row">
+<!--                <div class="col-sm-2">-->
+<!--                </div>-->
+                <div class="col-sm-8">
+                    <!---------------------titlu--------------------->
+                    <div class="title">
+                        COMPOSITION VII
+                    </div>
+
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="logo">
+                        <a th:href="@{/admin/home}">
+                            <img th:src="@{/images/logoALB.PNG}" class="img-responsive" width="100" height="100"
+                                 alt="Logo"/>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <!---------------------info--------------------->
+                <div class="col-sm-12">
+                    <div class="info" style="text-align: justify">
+                        <i>Composition VII</i> is an abstract oil painting
+                        executed in 1913 by Wassily Kandinsky, a Russian-born
+                        painter. It is in the collection of the Tretyakov
+                        Gallery, Moscow. Art historians have concluded that
+                        the work is a combination of the themes of Resurrection,
+                        Judgment Day, the Flood and the Garden of Eden.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-12">
+
+            <div class="drag">
+                <div th:if="${message}">
+                    <h2 th:text="${message}"/>
+                </div>
+
+                <div>
+                    <form method="POST" enctype="multipart/form-data" action="/paintings/composition">
+                        <div class="col-sm-4">
+                            <div style="color: #2d3561;
+                        font-family: Segoe UI Semibold, Tahoma, Geneva, sans-serif; padding-bottom: 5px; font-size: 20px">
+                                Upload an image:
+                            </div>
+
+                            <input type="file" class="custom-file-input" name="file" value="Upload" style="padding-bottom: 5px"/>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div style="color: #2d3561;
+                        font-family: Segoe UI Semibold, Tahoma, Geneva, sans-serif; padding-bottom: 5px; font-size: 20px">
+                                Convert your image:
+                            </div>
+                            <div >
+                                <input type="submit" value="Convert" style="background-color: #c05c7e; color: #ffffff;
+                        font-family: Segoe UI Semibold, Tahoma, Geneva, sans-serif; padding: 5px 100px;
+                        border-radius: 4px; font-size: 15px" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div>
+                    <ul>
+                        <li th:each="file : ${files}">
+                            <a th:href="${file}" th:text="${file}" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

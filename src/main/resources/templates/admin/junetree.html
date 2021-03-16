@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>ART APP - June Tree</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/junetree.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+
+<body class="body">
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-sm-6">
+            <!---------------------pictura--------------------->
+            <div class="painting">
+                <img th:src="@{/images/candy.jpg}" class="img-responsive center-block" width="300" height="150"
+                     alt="June Tree"/>
+            </div>
+
+        </div>
+
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-2">
+                </div>
+                <div class="col-sm-6">
+                    <!---------------------titlu--------------------->
+                    <div class="title">
+                        JUNE TREE
+                    </div>
+
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="logo">
+                        <a th:href="@{/admin/home}">
+                            <img th:src="@{/images/logoALB.PNG}" class="img-responsive" width="100" height="100"
+                                 alt="Logo"/>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <!---------------------info--------------------->
+                <div class="col-sm-12">
+                    <div class="info" style="text-align: justify">
+                        <i>June Tree</i> is an oil painting executed by
+                        Natasha Wescoat. She creates a modern fun woven wall
+                        tapestry. A whimsical contemporary tree on a vibrant
+                        colored background makes this wall hanging unique.
+                        The combination of the thread colors and weaving
+                        creates a unique art experience that changes with
+                        each viewing angle. It draws the viewer into the
+                        depth and texture of the image while adding an
+                        coustic elegance to any room decor.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-12">
+
+            <div class="drag">
+                <div th:if="${message}">
+                    <h2 th:text="${message}"/>
+                </div>
+
+                <div>
+                    <form method="POST" enctype="multipart/form-data" action="/paintings/junetree">
+                        <div class="col-sm-4">
+                            <div style="color: #2d3561;
+                        font-family: Segoe UI Semibold, Tahoma, Geneva, sans-serif; padding-bottom: 5px; font-size: 20px">
+                                Upload an image:
+                            </div>
+
+                            <input type="file" class="custom-file-input" name="file" value="Upload" style="padding-bottom: 5px"/>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div style="color: #2d3561;
+                        font-family: Segoe UI Semibold, Tahoma, Geneva, sans-serif; padding-bottom: 5px; font-size: 20px">
+                                Convert your image:
+                            </div>
+                            <div >
+                                <input type="submit" value="Convert" style="background-color: #c05c7e; color: #ffffff;
+                        font-family: Segoe UI Semibold, Tahoma, Geneva, sans-serif; padding: 5px 100px;
+                        border-radius: 4px; font-size: 15px" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div>
+                    <ul>
+                        <li th:each="file : ${files}">
+                            <a th:href="${file}" th:text="${file}" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>ART APP - Udnie</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/udnie.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+
+<body class="body">
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-sm-6">
+            <!---------------------pictura--------------------->
+            <div class="painting">
+                <img th:src="@{/images/udnie.jpg}" class="img-responsive center-block" width="400" height="400"
+                     alt="Composition VII"/>
+            </div>
+
+        </div>
+
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-2">
+                </div>
+                <div class="col-sm-6">
+                    <!---------------------titlu--------------------->
+                    <div class="title">
+                        UDNIE
+                    </div>
+
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="logo">
+                        <a th:href="@{/admin/home}">
+                            <img th:src="@{/images/logoALB.PNG}" class="img-responsive" width="100" height="100"
+                                 alt="Logo"/>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <!---------------------info--------------------->
+                <div class="col-sm-12">
+                    <div class="info" style="text-align: justify">
+                        <i>Udnie</i> is an abstract oil painting executed by
+                        Francis Picabia. Around 1914 he began to pilfer words
+                        and phrases from the encyclopedic Petit Larousse
+                        dictionary for use in his own works. He based this
+                        painting’s title on a line from Virgil’s Aeneid from
+                        that source—“Dying, he saw again in memory his dear
+                        Argos”—substituting “Udnie,” a name of Picabia’s own
+                        invention. The artist associated the name with his
+                        memories of French dancer Stacia Napierkowska
+                        rehearsing onboard during his transatlantic journey to
+                        New York in 1913. “Udnie” is also an anagram of the
+                        last name of French musicologist Jean d’Udine, whose
+                        theory of synesthesia (published in 1910) linked
+                        painting with music and dance through the concept
+                        of rhythm.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-12">
+
+            <div class="drag">
+                <div th:if="${message}">
+                    <h2 th:text="${message}"/>
+                </div>
+
+                <div>
+                    <form method="POST" enctype="multipart/form-data" action="/paintings/udnie">
+                        <div class="col-sm-4">
+                            <div style="color: #2d3561;
+                        font-family: Segoe UI Semibold, Tahoma, Geneva, sans-serif; padding-bottom: 5px; font-size: 20px">
+                                Upload an image:
+                            </div>
+
+                            <input type="file" class="custom-file-input" name="file" value="Upload" style="padding-bottom: 5px"/>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div style="color: #2d3561;
+                        font-family: Segoe UI Semibold, Tahoma, Geneva, sans-serif; padding-bottom: 5px; font-size: 20px">
+                                Convert your image:
+                            </div>
+                            <div >
+                                <input type="submit" value="Convert" style="background-color: #c05c7e; color: #ffffff;
+                        font-family: Segoe UI Semibold, Tahoma, Geneva, sans-serif; padding: 5px 100px;
+                        border-radius: 4px; font-size: 15px" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div>
+                    <ul>
+                        <li th:each="file : ${files}">
+                            <a th:href="${file}" th:text="${file}" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

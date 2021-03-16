@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>ART APP - La Muse</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/lamuse.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+
+<body class="body">
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-sm-6">
+            <!---------------------pictura--------------------->
+            <div class="painting">
+                <img th:src="@{/images/la_muse.jpg}" class="img-responsive center-block" width="500" height="500"
+                     alt="La Muse"/>
+            </div>
+
+        </div>
+
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-2">
+                </div>
+                <div class="col-sm-6">
+                    <!---------------------titlu--------------------->
+                    <div class="title">
+                        LA MUSE
+                    </div>
+
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="logo">
+                        <a th:href="@{/admin/home}">
+                            <img th:src="@{/images/logoALB.PNG}" class="img-responsive" width="100" height="100"
+                                 alt="Logo"/>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <!---------------------info--------------------->
+                <div class="col-sm-12">
+                    <div class="info" style="text-align: justify">
+                        <i>La Muse</i> painting, also known as <i>Young
+                        Woman Drawing</i> and <i>Two Women</i>, was painted
+                        in 1935, surrealism and cubism were a common synthesis,
+                        with  alive and warm colors. Picasso did a series of
+                        paintings of young women drawing, writing or reading.
+                        This is Marie Therese Walther, not with the rounded,
+                        ample forms the painter normally used to depict her but
+                        with an angular style. The sleeping girl resembles her
+                        as well, and indeed she would be somewhere in Picasso's
+                        affection. <br> <br>
+                        It is one of the famous paintings of this artist. It
+                        reflects the perspective of the artist in terms of
+                        technique used. The same color and formality are
+                        encountered in different works. The colors, the
+                        perspective and depth leave the artist's footsteps to
+                        the imagination world.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-12">
+
+            <div class="drag">
+                <div th:if="${message}">
+                    <h2 th:text="${message}"/>
+                </div>
+
+                <div>
+                    <form method="POST" enctype="multipart/form-data" action="/paintings/lamuse">
+                        <div class="col-sm-4">
+                            <div style="color: #2d3561;
+                        font-family: Segoe UI Semibold, Tahoma, Geneva, sans-serif; padding-bottom: 5px; font-size: 20px">
+                                Upload an image:
+                            </div>
+
+                            <input type="file" class="custom-file-input" name="file" value="Upload" style="padding-bottom: 5px"/>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div style="color: #2d3561;
+                        font-family: Segoe UI Semibold, Tahoma, Geneva, sans-serif; padding-bottom: 5px; font-size: 20px">
+                                Convert your image:
+                            </div>
+                            <div >
+                                <input type="submit" value="Convert" style="background-color: #c05c7e; color: #ffffff;
+                        font-family: Segoe UI Semibold, Tahoma, Geneva, sans-serif; padding: 5px 100px;
+                        border-radius: 4px; font-size: 15px" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div>
+                    <ul>
+                        <li th:each="file : ${files}">
+                            <a th:href="${file}" th:text="${file}" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

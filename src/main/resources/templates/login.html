@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>ART APP - LogIn</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+
+<body class="body">
+
+<div class="container">
+    <div class="row-eq-height">
+
+        <div class="col-sm-6" >
+        </div>
+
+        <div class="col-sm-6" >
+            <form th:action="@{/login}" method="POST" class="form-signin">
+                <br/>
+
+                <input type="text" id="user_name" name="user_name" placeholder="User Name"
+                       class="form-control"/>
+<!--                <br/>-->
+                <input type="password" th:placeholder="Password"
+                       id="password" name="password" class="form-control"/>
+
+                <div align="center" th:if="${param.error}" class="alert alert-danger alert-dismissible fade in">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Invalid user name or password</strong>
+                </div>
+
+                <button class="btn btn-lg btn-primary btn-block" style="background-color: #ffb961; color: #2d3561;
+                        font-family: Segoe UI Semibold, Tahoma, Geneva, sans-serif" name="Submit" value="Login" type="Submit" th:text="LOGIN">
+                </button>
+
+            </form>
+            <div class="form-register" style="size: auto; color: white">
+                <p style="font-size: medium">
+                    Don't have an account?  <a th:href="@{/registration}" style="color: #ffb961" type="Submit"><u>Register</u></a>
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>

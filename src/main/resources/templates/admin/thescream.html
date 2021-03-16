@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>ART APP - The Scream</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/thescream.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+
+<body class="body">
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-sm-6">
+            <!---------------------pictura--------------------->
+            <div class="painting">
+                <img th:src="@{/images/the_scream.jpg}" class="img-responsive center-block" width="325" height="450"
+                     alt="Composition VII"/>
+            </div>
+
+        </div>
+
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-2">
+                </div>
+                <div class="col-sm-6">
+                    <!---------------------titlu--------------------->
+                    <div class="title">
+                        THE SCREAM
+                    </div>
+
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="logo">
+                        <a th:href="@{/admin/home}">
+                            <img th:src="@{/images/logoALB.PNG}" class="img-responsive" width="100" height="100"
+                                 alt="Logo"/>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <!---------------------info--------------------->
+                <div class="col-sm-12">
+                    <div class="info" style="text-align: justify">
+                        <i>The Scream</i> is the popular name given to a composition
+                        created by Norwegian Expressionist artist Edvard Munch in 1893.
+                        The original German title given by Munch to his work was Der
+                        Schrei der Natur (The Scream of Nature), and the Norwegian title
+                        is Skrik (Shriek). The agonised face in the painting has become
+                        one of the most iconic images of art, seen as symbolising the
+                        anxiety of the human condition.
+                        Munch created two versions in paint and two in pastels, as well
+                        as a lithograph stone from which several prints survive. Both of
+                        the painted versions have been stolen, but since recovered. One
+                        of the pastel versions commanded the fourth highest nominal price
+                        paid for an artwork at a public auction.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-12">
+
+            <div class="drag">
+                <div th:if="${message}">
+                    <h2 th:text="${message}"/>
+                </div>
+
+                <div>
+                    <form method="POST" enctype="multipart/form-data" action="/paintings/thescream">
+                        <div class="col-sm-4">
+                            <div style="color: #2d3561;
+                        font-family: Segoe UI Semibold, Tahoma, Geneva, sans-serif; padding-bottom: 5px; font-size: 20px">
+                                Upload an image:
+                            </div>
+
+                            <input type="file" class="custom-file-input" name="file" value="Upload" style="padding-bottom: 5px"/>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div style="color: #2d3561;
+                        font-family: Segoe UI Semibold, Tahoma, Geneva, sans-serif; padding-bottom: 5px; font-size: 20px">
+                                Convert your image:
+                            </div>
+                            <div >
+                                <input type="submit" value="Convert" style="background-color: #c05c7e; color: #ffffff;
+                        font-family: Segoe UI Semibold, Tahoma, Geneva, sans-serif; padding: 5px 100px;
+                        border-radius: 4px; font-size: 15px" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div>
+                    <ul>
+                        <li th:each="file : ${files}">
+                            <a th:href="${file}" th:text="${file}" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
